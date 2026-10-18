@@ -98,25 +98,18 @@ By default the pipeline reads up to 5 pages of issues per run (`max_pages=5` in 
 
 Table `issues`:
 
-|Column                | Type               |
-Description                                                 |
-|----------------------|--------------------|
-------------------------------------------------------------|
-| `id`                 | BIGINT (PK)        | GitHub issue
-id                                 |
-| `number`             | INT                | Issue number within the repository
-| `title`              | TEXT               | Issue
-title
-| `state`              | TEXT               | `open` or
-`closed`                                     |
-|`is_pull_request`     | BOOLEAN            | The GitHub issues endpoint
-also returns PRs     |
-| `created_at`         | TIMESTAMPTZ        | Creation
-timestamp                                     |
-| `closed_at`          | TIMESTAMPTZ        | Closing timestamp (null while open)    |
-| `comments`           | INT                | Number of comments                                      |
-| `author`             | TEXT               | GitHUb login of the author                      |
-| `time_to_close_hours` | NUMERIC           | Hours between creation and closing (null if open)
+| Column                | Type        | Description                                      |
+|-----------------------|-------------|--------------------------------------------------|
+| `id`                  | BIGINT (PK) | GitHub issue id                                  |
+| `number`              | INT         | Issue number within the repository               |
+| `title`               | TEXT        | Issue title                                      |
+| `state`               | TEXT        | `open` or `closed`                               |
+| `is_pull_request`     | BOOLEAN     | The GitHub issues endpoint also returns PRs      |
+| `created_at`          | TIMESTAMPTZ | Creation timestamp                               |
+| `closed_at`           | TIMESTAMPTZ | Closing timestamp (null while open)              |
+| `comments`            | INT         | Number of comments                               |
+| `author`              | TEXT        | GitHub login of the author                       |
+| `time_to_close_hours` | NUMERIC     | Hours between creation and closing (null if open)|
 
 ## Example queries
 
